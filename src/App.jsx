@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [stars, setStars] = useState(0);
@@ -25,15 +26,7 @@ function App() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#FFF9F2] text-[#800020]">
-      <nav className="flex items-center justify-between bg-[#800020] px-20 py-6 text-[#FFF9F2]">
-        <h1 className="text-3xl font-bold">Maroon UI</h1>
-        <ul className="flex gap-10 text-xl">
-          <li>Docs</li>
-          <li>Components</li>
-          <li>GitHub</li>
-        </ul>
-        <p className="rounded-full bg-[#D45060] px-5 py-2 text-lg font-bold">v1.0</p>
-      </nav>
+      <Navbar />
 
       <header className="px-20 pt-8 text-center">
         <h2 className="text-7xl font-bold">Build pages faster.</h2>
