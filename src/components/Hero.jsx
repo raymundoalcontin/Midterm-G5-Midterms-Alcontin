@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Intro from "./Intro";
+import Stats from "./Stats";
 
 function Hero(){
-
-  const [stars, setStars] = useState(0);
-  const [downloads, setDownloads] = useState(0);
-  const [issues, setIssues] = useState(5);
+    const [stars, setStars] = useState(0);
+    const [downloads, setDownloads] = useState(0);
+    const [issues, setIssues] = useState(5);
 
      function handleStar() {
     setStars(stars + 1);
@@ -25,13 +25,11 @@ function Hero(){
     setIssues(5);
   }
 
-
     return(
         <>
-        <Intro/>
-
-
-      <div className="flex justify-center gap-4 py-6">
+        <Intro author="RAYMUNDO C. ALCONTIN JR." />
+        
+        <div className="flex justify-center gap-4 py-6">
         <button
           className="cursor-pointer rounded-lg bg-[#800020] px-8 py-3 text-xl font-bold text-[#FFF9F2]"
           onClick={handleStar}
@@ -57,21 +55,8 @@ function Hero(){
           Reset
         </button>
       </div>
+      <Stats stars={stars} downloads={downloads} issues={issues} />
 
-      <div className="flex justify-center gap-6 pb-8">
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{stars}</p>
-          <p className="mt-1 text-lg text-[#000000]">Stars</p>
-        </div>
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{downloads}</p>
-          <p className="mt-1 text-lg text-[#000000]">Downloads</p>
-        </div>
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{issues}</p>
-          <p className="mt-1 text-lg text-[#000000]">Issues reported</p>
-        </div>
-      </div>
     </>
     )
 }
